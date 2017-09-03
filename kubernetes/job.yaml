@@ -1,0 +1,38 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: cockroachdb-backup
+spec:
+  # schedule: "0 0 * * *"
+  template:
+    metadata:
+      name: cockroachdb-backup
+    spec:
+      containers:
+      - name: backup
+        image: kminehart/cockroachdb-backup:v1.0.5
+        # Comment these out if you're using AWS
+        # volumeMounts:
+        # - name: gcp-key
+        #   mountPath: /gcp
+        # See the README.md for descirptions, instructions, and AWS alternatives
+        # env:
+        # - name: COCKROACH_HOST
+        #   value: database.default.svc.cluster.local
+        # - name: COCKROACH_PORT
+        #   value: 26257
+        # - name: COCKROACH_USER
+        #   value: cockroachdb
+        # - name: COCKROACH_DATABASE
+        #   value: database
+        # - name: CLOUD_PROVIDER
+        #   value: gcp
+        # - name: GCP_BUCKET_NAME
+        #   value: my-gcp-bucket
+        # - name: GCP_SA_USER
+        #   value: cockroach-backup-sa@my-project-123.iam.gserviceaccount.com
+        #   # restartPolicy: OnFailure
+        #volumes:
+        # - name: gcp-key
+        # secret:
+        # secretName: cockroach-backup-sa
