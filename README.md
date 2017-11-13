@@ -1,6 +1,6 @@
 # cockroachdb-backup-dockerfiles
 
-Dockerfiles that have the `cockroach` binary and `curl`.
+Dockerfiles that have the `cockroach` binary and `gcloud`.
 
 # Usage
 
