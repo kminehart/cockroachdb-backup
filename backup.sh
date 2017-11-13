@@ -1,5 +1,5 @@
 date=`date +%Y-%m-%d.%H.%M.%S`
-file="${date}-cockroachdb.sql"
+file="${date}-${COCKROACH_DATABASE}.sql"
 
 cat /google-cloud-sdk/path.bash.inc
 if [ "${CLOUD_PROVIDER}" = "aws" ]

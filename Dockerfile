@@ -16,8 +16,8 @@ RUN google-cloud-sdk/install.sh --usage-reporting=false \
   --path-update=false \
   --bash-completion=false
 
-# copy cockroach to filesystem
-COPY ./cockroach-latest.linux-musl-amd64/cockroach /cockroach
+RUN wget -qO- https://binaries.cockroachdb.com/cockroach-v1.1.1.linux-musl-amd64.tgz | tar  xvz
+RUN cp -i cockroach-v1.1.1.linux-musl-amd64/cockroach /
 RUN chmod +x /cockroach
 
 # add backup script
