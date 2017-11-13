@@ -1,0 +1,35 @@
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  name: cockroachdb-backup
+spec:
+  schedule: "0 0 * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: backup
+            image: kminehart/cockroachdb-backup:v1.0.5
+            env:
+            - name: COCKROACH_HOST
+              value: "database.default.svc.cluster.local"
+            - name: COCKROACH_PORT
+              value: "26257"
+            - name: COCKROACH_USER
+              value: "root"
+            - name: COCKROACH_DATABASE
+              value: "database"
+            - name: CLOUD_PROVIDER
+              value: "gcp"
+            - name: GCP_BUCKET_NAME
+              value: "my-gcp-bucket"
+            - name: GCP_SA_USER
+              value: "cockroach-backup-sa@my-project-123.iam.gserviceaccount.com"
+            volumeMounts:
+            - name: gcp-key
+              mountPath: /gcp
+          volumes:
+           - name: gcp-key
+             secret:
+               secretName: cockroach-backup-sa
