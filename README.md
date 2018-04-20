@@ -18,9 +18,7 @@ Modify the job to match your credentials.
 
 | Environment Variable | Default Value  | |
 |----------------------|----------------|-|
-| COCKROACH_HOST       | cockroachdb    | |
-| COCKROACH_PORT       | 26257          | |
-| COCKROACH_USER       | cockroachdb    | |
+| COCKROACH_URL        |     | |
 | COCKROACH_DATABASE   | database       | |
 | CLOUD_PROVIDER       | gcp            | "gcp" or "aws |
 | AWS_S3_BUCKET        | my-bucket      | |

@@ -15,7 +15,7 @@ then
 
   # Dump cockroachdb
   echo "Dumping database"
-  /cockroach dump ${COCKROACH_DATABASE} -u ${COCKROACH_USER} --insecure > "/tmp/${file}"
+  /cockroach dump ${COCKROACH_DATABASE} --url ${COCKROACH_URL} > "/tmp/${file}"
   echo "Dump completed.  Uploading /tmp/${file} to ${url}"
 
   echo "Generating GCP token..."

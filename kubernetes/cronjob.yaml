@@ -12,12 +12,8 @@ spec:
           - name: backup
             image: kminehart/cockroachdb-backup:v1.0.5
             env:
-            - name: COCKROACH_HOST
-              value: "database.default.svc.cluster.local"
-            - name: COCKROACH_PORT
-              value: "26257"
-            - name: COCKROACH_USER
-              value: "root"
+            - name: COCKROACH_URL
+              value: "cockroachdb://root@cockroachdb/database?sslmode=disable"
             - name: COCKROACH_DATABASE
               value: "database"
             - name: CLOUD_PROVIDER
