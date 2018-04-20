@@ -1,15 +1,17 @@
 # cockroachdb-backup-dockerfiles
 
-Dockerfiles that have the `cockroach` binary and `curl`.
+Dockerfiles that have the `cockroach` binary and `gcloud`.
 
 # Usage
 
 ## Kubernetes
 
-The example job provided runs every night at midnight and runs `cockroach dump`, followed by `curl` to send it to an S3 bucket or a Google storage bucket.
+The example cronjob provided runs every night at midnight and runs `cockroach dump`, followed by `curl` to send it to an S3 bucket or a Google storage bucket.
+
+**NOTE** The CronJob resource requires kubernetes version >= 1.8.
 
 ```
-vim kubernetes/job.yaml
+vim kubernetes/cronjob.yaml
 ```
 
 Modify the job to match your credentials.
