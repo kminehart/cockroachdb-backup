@@ -10,7 +10,7 @@ spec:
         spec:
           containers:
           - name: backup
-            image: kminehart/cockroachdb-backup:v1.0.5
+            image: kminehart/cockroachdb-backup:v2.0.0
             env:
             - name: COCKROACH_URL
               value: "cockroachdb://root@cockroachdb/database?sslmode=disable"
