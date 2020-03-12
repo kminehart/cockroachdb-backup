@@ -22,12 +22,12 @@ Modify the job to match your credentials.
 |----------------------|----------------|-|
 | COCKROACH_URL        |     | |
 | COCKROACH_DATABASE   | database       | |
-| CLOUD_PROVIDER       | gcp            | "gcp" or "aws |
+| CLOUD_PROVIDER       | gcp            | "gcp" or "aws" |
 | AWS_S3_BUCKET        | my-bucket      | |
 | AWS_S3_KEY           | my-s3-key      | |
 | AWS_S3_SECRET        | my-s3-secret   | |
 | GCP_BUCKET_NAME      | my-gcp-bucket  | |
-| GCP_SA_USER          | cockroach-backup-sa@my-project-123.iam.gserviceaccount.com | The username of the SeriveAccount assigned to the provided key file (see blow) |
+| GCP_SA_USER          | cockroach-backup-sa@my-project-123.iam.gserviceaccount.com | The username of the SeriveAccount assigned to the provided key file (see below) |
 
 # Google Cloud Storage
 
